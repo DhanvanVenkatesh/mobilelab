@@ -1,3 +1,4 @@
+//Create Empty Activity,not Java class
 //name file as Shared_Preference_3_Logout.java
 
 package com.example.sharedlogin;

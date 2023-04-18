@@ -1,0 +1,40 @@
+//Add the below permissions in the manifest file
+//<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+// <uses-permission android:name="android.permission.INTERNET"/>
+// <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+import android.content.Context;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+
+public class Wifidemo extends AppCompatActivity {
+
+    Button wifion,wifioff;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_wifidemo);
+        wifion = findViewById(R.id.button7);
+        wifioff = findViewById(R.id.button9);
+
+        wifion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+                wifi.setWifiEnabled(true);
+            }
+        });
+        wifioff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+                wifi.setWifiEnabled(false);
+            }
+        });
+        
+    }
+}

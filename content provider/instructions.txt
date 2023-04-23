@@ -1,0 +1,15 @@
+in CP1 Manifest, inside application tag
+
+<provider
+            android:name="com.example.cp1.MyContentProvider"
+            android:authorities="com.demo.user.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
+
+
+in CP2 Manifest, above application tag
+
+
+    <queries>
+        <package android:name="com.example.cp1"/>
+    </queries>
